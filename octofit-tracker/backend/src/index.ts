@@ -9,7 +9,7 @@ import { usersRouter } from './routes/users.js';
 import { workoutsRouter } from './routes/workouts.js';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const port = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -35,7 +35,7 @@ app.use((error: unknown, _request: express.Request, response: express.Response, 
 
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
-  ? `https://${codespaceName}-${port}.app.github.dev`
+  ? `https://${codespaceName}-8000.app.github.dev`
   : `http://localhost:${port}`;
 
 app.listen(port, '0.0.0.0', () => {
