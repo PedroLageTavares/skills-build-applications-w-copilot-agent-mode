@@ -1,0 +1,142 @@
+.app-shell {
+  min-height: 100svh;
+}
+
+.app-header {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 18px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand-block {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  text-align: left;
+}
+
+.brand-block img {
+  height: 48px;
+  width: 48px;
+}
+
+.brand-block p {
+  color: var(--text-h);
+  font-family: var(--heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.brand-block span {
+  color: var(--text);
+  display: block;
+  font-size: 13px;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.app-nav {
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.app-nav .nav-link {
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+.app-nav .nav-link.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.resource-view {
+  padding: 48px 28px;
+  text-align: left;
+}
+
+.resource-heading {
+  align-items: flex-start;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.resource-heading h1 {
+  margin: 6px 0 12px;
+}
+
+.resource-heading p:last-child {
+  max-width: 680px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.endpoint {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-h);
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.state-message {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  padding: 18px;
+}
+
+.state-message.error {
+  border-color: #d84a4a;
+  color: #9b1c1c;
+}
+
+.octofit-table {
+  --bs-table-bg: var(--surface);
+  --bs-table-border-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.octofit-table th {
+  color: var(--text-h);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .app-header,
+  .resource-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-nav {
+    justify-content: flex-start;
+  }
+
+  .endpoint {
+    width: fit-content;
+  }
+}
