@@ -1,9 +1,13 @@
 import ResourceTable from './ResourceTable.jsx'
 
+const activitiesApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 function Activities() {
   return (
     <ResourceTable
-      apiEndpoint="/api/activities/"
+      apiEndpoint={activitiesApiEndpoint}
       component="activities"
       title="Activities"
       description="Review logged workouts, durations, calorie totals, and activity timestamps."

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { buildApiUrl, normalizeCollectionResponse } from '../api.js'
+import { normalizeCollectionResponse } from '../api.js'
 
 function formatValue(value) {
   if (Array.isArray(value)) {
@@ -30,7 +30,7 @@ function ResourceTable({ apiEndpoint, component, title, description, columns }) 
         setStatus('loading')
         setError('')
 
-        const response = await fetch(buildApiUrl(apiEndpoint), {
+        const response = await fetch(apiEndpoint, {
           signal: controller.signal,
         })
 
