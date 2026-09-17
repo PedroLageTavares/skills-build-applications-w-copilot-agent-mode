@@ -14,6 +14,21 @@ const port = 8000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (_request, response) => {
+  response.json({
+    service: 'octofit-tracker-backend',
+    apiBase: '/api',
+    endpoints: [
+      '/api/users',
+      '/api/teams',
+      '/api/activities',
+      '/api/leaderboard',
+      '/api/workouts',
+      '/api/health',
+    ],
+  });
+});
+
 app.use('/api/users', usersRouter);
 app.use('/api/teams', teamsRouter);
 app.use('/api/activities', activitiesRouter);
