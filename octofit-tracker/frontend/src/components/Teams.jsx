@@ -3,6 +3,7 @@ import ResourceTable from './ResourceTable.jsx'
 function Teams() {
   return (
     <ResourceTable
+      apiEndpoint="/api/teams/"
       component="teams"
       title="Teams"
       description="Browse team rosters, mascots, and group activity structures."

@@ -3,6 +3,7 @@ import ResourceTable from './ResourceTable.jsx'
 function Workouts() {
   return (
     <ResourceTable
+      apiEndpoint="/api/workouts/"
       component="workouts"
       title="Workouts"
       description="Explore personalized workout suggestions by difficulty, duration, and focus."

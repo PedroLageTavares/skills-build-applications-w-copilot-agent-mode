@@ -3,6 +3,7 @@ import ResourceTable from './ResourceTable.jsx'
 function Activities() {
   return (
     <ResourceTable
+      apiEndpoint="/api/activities/"
       component="activities"
       title="Activities"
       description="Review logged workouts, durations, calorie totals, and activity timestamps."

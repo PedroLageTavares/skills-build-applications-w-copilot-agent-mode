@@ -17,7 +17,7 @@ function formatValue(value) {
   return String(value)
 }
 
-function ResourceTable({ component, title, description, columns }) {
+function ResourceTable({ apiEndpoint, component, title, description, columns }) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -30,7 +30,7 @@ function ResourceTable({ component, title, description, columns }) {
         setStatus('loading')
         setError('')
 
-        const response = await fetch(buildApiUrl(component), {
+        const response = await fetch(buildApiUrl(apiEndpoint), {
           signal: controller.signal,
         })
 
@@ -54,7 +54,7 @@ function ResourceTable({ component, title, description, columns }) {
     loadItems()
 
     return () => controller.abort()
-  }, [component])
+  }, [apiEndpoint])
 
   return (
     <section className="resource-view">
@@ -64,7 +64,7 @@ function ResourceTable({ component, title, description, columns }) {
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <span className="endpoint">/api/{component}/</span>
+        <span className="endpoint">{apiEndpoint}</span>
       </div>
 
       {status === 'loading' && <p className="state-message">Loading {title.toLowerCase()}...</p>}

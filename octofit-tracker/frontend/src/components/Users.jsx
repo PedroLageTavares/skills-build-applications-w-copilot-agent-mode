@@ -3,6 +3,7 @@ import ResourceTable from './ResourceTable.jsx'
 function Users() {
   return (
     <ResourceTable
+      apiEndpoint="/api/users/"
       component="users"
       title="Users"
       description="Manage athlete profiles, team assignment, and fitness goals."

@@ -3,6 +3,7 @@ import ResourceTable from './ResourceTable.jsx'
 function Leaderboard() {
   return (
     <ResourceTable
+      apiEndpoint="/api/leaderboard/"
       component="leaderboard"
       title="Leaderboard"
       description="Track ranks, points, and competitive progress across OctoFit teams."
